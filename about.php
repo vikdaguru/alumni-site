@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous"
+    />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/css/style.css" />
+    <title>About us</title>
+    <link rel="icon" href="/alumni-site/img/WhatsApp Image 2022-06-22 at 9.09.06 PM.jpeg" type="image/icon type">
+  </head>
+  <body style="background-color: #ffff;">
+    <nav id="navbar">
+      <div class="logo">
+        <img src="img/WhatsApp Image 2022-06-22 at 9.09.06 PM.jpeg" alt="user" />
+      </div>
+      <ul>
+        <li><a href="/alumni-site/index.html">Home</a></li>
+        <li><a href="#">Portfolio's</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#socials">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header>
+        <button id="toggle" class="toggle">
+          <i class="fa fa-bars fa-2x"></i>
+        </button>
+  
+        <h1>Baptist High School Makurdi</h1> 
+  
+        <h3>
+         Alumni Association
+        </h3>
+  
+        <button class="cta-btn" id="open-signup">Sign Up</button>
+        <button class="cta-btn" id="open-login">Log in</button>
+      </header>
+      <div class="about-container">
+        <div class="about-container-logo">
+            <img src="/alumni-site/img/WhatsApp Image 2022-06-22 at 9.09.06 PM.jpeg" alt="">
+        </div>
+        <div class="about-container-logo-text">
+            <h1>About us</h1>
+            <p> We are a family of individuals who, for a time, attended Baptist High School Makurdi; 
+                some of us graduated from the school, others had to leave before graduation but all of 
+                us have had the privilege of being instructed and groomed at BHS. 
+                The Association came into being upon inaugurated by the Pioneer Principal of BHSM, Deaconess B. K. Ilori in July 2022. 
+                The Association became registered with the Corporate Affairs Commission in 2022. 
+                Contact information
+                You can reach the General Alumni or the Representatives from each Set through the Information below. 
+           </p>
+
+             <h1>  MISSION </h1> 
+             <p>
+            To foster a connection among BHSM Alumni across all years, from the Pioneer Set of 2014, 
+            and to create a link between Alumni, current students of the School and the School itself. 
+            </p>
+            <h1>VISION</h1>
+            <p>
+            To give back to BHSM through partnership on School projects, award of
+             scholarships and prizes to deserving students and other independent Alumni projects. 
+            To be a formidable union building responsible members of the Society.
+            </p>
+
+        </div>
+      </div>
+
+        <!-- Modal -->
+    <div class="modal-container" id="signup-modal">
+      <div class="modal">
+        <button class="close-btn" id="signup-close">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="modal-header">
+          <h1>Sign Up</h1>
+        </div>
+        <div class="modal-content">
+          <form class="modal-form">
+            <div>
+              <label for="name">First Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter First Name"
+                class="form-input" required
+              />
+            </div>
+            <div>
+                <label for="name">Last Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Enter Last Name"
+                  class="form-input" required
+                />
+              </div>
+              <div>
+                <label for="phonenumber">Phone Number</label>
+                <input
+                  type="number"
+                  id="number"
+                  placeholder="Enter Phone Number"
+                  class="form-input" required
+                />
+              </div>
+              <div>
+                <label for="yearofgraduation">Year of Graduation</label>
+                <input
+                  type="number"
+                  id="number"
+                  placeholder="Enter Year of Graduation"
+                  class="form-input" required
+                />
+              </div>
+              <div>
+                <label for="DateofBirth">Date of Birth</label>
+                <input
+                  type="date"
+                  id="date"
+                  placeholder=""
+                  class="form-input" required
+                />
+              </div>
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+                class="form-input" required
+              />
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+                class="form-input" required
+              />
+            </div>
+            <div>
+              <label for="password2">Confirm Password</label>
+              <input
+                type="password"
+                id="password2"
+                placeholder="Confirm Password"
+                class="form-input" required
+              />
+            </div>
+            <input type="submit" value="Submit" class="submit-btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-container" id="login-modal">
+        <div class="modal">
+          <button class="close-btn" id="login-close">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="modal-header">
+            <h3>Log In</h3>
+          </div>
+          <div class="modal-content">
+            <form class="modal-form">
+              <div>
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter Email"
+                  class="form-input"
+                />
+              </div>
+              <div>
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Enter Password"
+                  class="form-input"
+                />
+              </div>
+              
+              
+              
+              <input type="submit" value="Submit" class="submit-btn" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="foot-head">
+          <h1>Baptist High School Alumni Association</h1>
+        </div>
+        <div class="foot-content">
+          <p>
+            This website is a platform created for Baptist High school <br>
+             Graduates to be a means of creating a space for graduates to <br>
+             catch up and be up to date with our activities.
+          </p>
+        </div>
+       
+        
+      
+        <div class="foot-legal">
+          <p>&copy; 2022 . Baptist High Alumni Association All rights reserved.</p>
+          
+          
+        </div>
+        <div class="social_media">
+          <ul class="socials" id="socials"> 
+            <li><a href=""> <i class='bx bxl-facebook-circle'></i></a></li>
+            <li><a href=""> <i class='bx bxl-instagram-alt' ></i></i></a></li>
+            <li><a href=""><i class='bx bxl-twitter'></i></a></li>
+            <li><a href=""> <i class='bx bxl-linkedin-square' ></i></a></li>
+            <li><a href=""> <i class='bx bxl-meta'></i></i></a></li>
+          </ul>
+        </div>
+      </footer>
+
+    <script src="/alumni-site/Script/script.js"></script>
+  </body> 
+</html>  
+
+

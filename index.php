@@ -1,0 +1,266 @@
+
+<?php
+
+session_start();
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous"
+    />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/css/style.css" />
+    <title>BaptistAlumni's</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="logo">
+        <img src="img/WhatsApp Image 2022-06-22 at 9.09.06 PM.jpeg" alt="user" />
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="/alumni-site/dashboard.html">Portfolio's</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <button id="toggle" class="toggle">
+        <i class="fa fa-bars fa-2x"></i>
+      </button>
+
+      <h1>Baptist High School Makurdi</h1> 
+
+      <h3>
+       Alumni Association
+      </h3>
+
+      <button class="cta-btn" id="open-signup">Sign Up</button>
+      <button class="cta-btn" id="open-login">Log in</button>
+    </header>
+
+    <div class="container">
+      <a href="#">
+      <div class="card">
+        <h1>GRADUATE PROFILES </h1>
+        <hr>
+        <img src="img/undraw_connection_re_lcud.svg" alt="Avatar" style="width:100%">
+        
+      
+      </div>
+      </a>
+
+      <a href="#">
+      <div class="card">
+        <h1>UPCOMING EVENTS</h1>
+        <hr>
+        <img src="img/undraw_having_fun_re_vj4h.svg" alt="Avatar" style="width:100%">
+        
+      
+      </div>
+     </a>
+
+      <a href="#">
+      <div class="card">
+        <h1>MAKE A DONATION</h1>
+        <hr>
+        <img src="img/undraw_transfer_money_re_6o1h.svg" alt="Avatar" style="width:100%">
+        
+      </div>
+    </a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-container" id="signup-modal">
+      <div class="modal">
+        <button class="close-btn" id="signup-close">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="modal-header">
+          <h1>Sign Up</h1>
+        </div>
+        <div class="modal-content">
+          <form class="modal-form" action="php/sign.php" method="POST">
+            <div>
+              <label for="name">First Name</label>
+              <input
+                type="text"
+                id="name" name="firstname"
+                placeholder="Enter First Name"
+                class="form-input" required
+              />
+            </div>
+            <div>
+                <label for="name">Last Name</label>
+                <input
+                  type="text"
+                  id="name" name="lastname"
+                  placeholder="Enter Last Name"
+                  class="form-input" required
+                />
+              </div>
+              <div>
+                <label for="phonenumber">Phone Number</label>
+                <input
+                  type="number"
+                  id="number" name="phoneno"
+                  placeholder="Enter Phone Number"
+                  class="form-input" required
+                />
+              </div>
+              <div>
+                <label for="yearofgraduation">Year of Graduation</label>
+                <input
+                  type="number"
+                  id="number" name="yearofgrad"
+                  placeholder="Enter Year of Graduation"
+                  class="form-input" required
+                />
+              </div>
+              <div>
+                <label for="DateofBirth">Date of Birth</label>
+                <input
+                  type="date"
+                  id="date" name="dob"
+                  placeholder=""
+                  class="form-input" required
+                />
+              </div>
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email" name="email"
+                placeholder="Enter Email"
+                class="form-input" required
+              />
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password" name="password"
+                placeholder="Enter Password"
+                class="form-input" required
+              />
+            </div>
+            <div>
+              <label for="password2">Confirm Password</label>
+              <input
+                type="password"
+                id="password2" name="password2"
+                placeholder="Confirm Password"
+                class="form-input" required
+              />
+            </div>
+            <input type="submit" value="Submit" class="submit-btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-container" id="login-modal">
+        <div class="modal">
+          <button class="close-btn" id="login-close">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="modal-header">
+            <h3>Log In</h3>
+          </div>
+          <div class="modal-content">
+            <form class="modal-form" action="" method="POST">
+              <div>
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email" name="email"
+                  placeholder="Enter Email"
+                  class="form-input"
+                />
+              </div>
+              <div>
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password" name="password"
+                  placeholder="Enter Password"
+                  class="form-input"
+                />
+<?php
+include("connect.php");
+//phoneno, firstname, lastname, yearofgrad, dob, email, password
+if(array_key_exists("go", $_POST)){
+$email = $_POST['email'];
+$password = $_POST['password'];
+$sql = mysqli_query($conn, "SELECT * FROM alumnidb.members_login WHERE `email` ='$email' AND `password` ='$password'")or die(" cannot fetch record".mysqli_error());
+//$result = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($sql);
+$check=mysqli_fetch_array($sql);
+if ($email=="" || $password=="") {
+//$msg="enter username or password";
+echo"<script> alert ('enter username or password') </script>";
+}else if($count==0){
+    $msg="username does not exists";
+    echo"<script> alert ('invalid username or password') </script>";
+}
+     if ($check["email"]==$email && $check["password"] == $password){
+ //start session
+ 
+         $_SESSION['login'] = "login sucess";
+         $_SESSION['user'] = $email;
+         //redirect to dashboard
+        echo "<meta http-equiv=\"refresh\"content=\"0;URL=dashboard.php\">";
+       //  header('Location:dashboard.php');
+    }
+}
+?>
+</div> 
+        <input type="submit" value="Submit" class="submit-btn" name="go"/>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="foot-head">
+          <h1>Baptist High School Alumni Association</h1>
+        </div>
+        <div class="foot-content">
+          <p>
+            This website is a platform created for Baptist High school <br>
+             Graduates to be a means of creating a space for graduates to <br>
+             catch up and be up to date with our activities.
+          </p>
+        </div>
+       
+        
+      
+        <div class="foot-legal">
+          <p>&copy; 2022 . Baptist High Alumni Association All rights reserved.</p>
+          
+          
+        </div>
+        <div class="social_media">
+          <ul class="socials"> 
+            <li><a href=""> <i class='bx bxl-facebook-circle'></i></a></li>
+            <li><a href=""> <i class='bx bxl-instagram-alt' ></i></i></a></li>
+            <li><a href=""><i class='bx bxl-twitter'></i></a></li>
+            <li><a href=""> <i class='bx bxl-linkedin-square' ></i></a></li>
+            <li><a href=""> <i class='bx bxl-meta'></i></i></a></li>
+          </ul>
+        </div>
+      </footer>
+
+    <script src="/alumni-site/Script/script.js"></script>
+  </body>
+</html>  

@@ -1,0 +1,150 @@
+<?php
+ 
+//start session
+session_start();
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <?php
+  
+  if(isset($_SESSION['login']))
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/css/dash.css">
+    <link rel="stylesheet" href="styles/css/bulma.css">
+    <title>Dashboard</title>
+    </head>
+    <body>
+      <div class="wrapper hover_collapse">
+        <div class="top_navbar">
+          <div class="logo">Dashboard </div>
+          <div class="menu">
+            <div class="hamburger">
+              <i class="fas fa-bars"></i>
+            </div>
+      
+          </div>
+          <div class="nav-end">
+            <h1>Welcome <?php echo $_SESSION['user'];?></h1>
+          </div>
+        </div>
+      
+        <div class="sidebar">
+          <div class="sidebar_inner">
+          <ul>
+            <li>
+              <a href="#">
+                <span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                <span class="text">Profiles</span>
+              </a>
+            </li>
+            <li>
+              <a href="payments.php">
+                <span class="icon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                <span class="text">Payments</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"><i class="fa fa-cog" aria-hidden="true"></i></span>
+                <span class="text">Settings</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"><i class="fa fa-question" aria-hidden="true"></i></span>
+                <span class="text">Need help?</span>
+              </a>
+            </li>
+            <li>
+              <a href="logout.php">
+                <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                <span class="text">Logout</span>
+              </a>
+            </li>
+            <li>
+              
+              
+             
+      
+          </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container ">
+        <div class="card .dash-img">
+          <header class="card-header">
+            <h2 class="card-header-title">
+                Payment Status
+            </h2>
+           
+            
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <img src="/alumni-site/img/undraw_credit_card_payments_re_qboh.svg" alt="">
+            </div>
+          </div>
+          <footer class="card-footer ">
+            <a href="#" class="card-footer-item black">PAID OR NOT PAID</a>
+          </footer>
+        </div>
+
+        <div class="card .dash-img">
+          <header class="card-header">
+            <h2 class="card-header-title">
+                Upcoming News and Events
+            </h2>
+           
+            
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <img src="/alumni-site/img/undraw_partying_re_at7f.svg" alt="">
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item black">STAY UP TO DATE WITH US!</a>
+          </footer>
+        </div>
+
+        <div class="card .dash-img">
+          <header class="card-header">
+            <h2 class="card-header-title">
+               Graduate Profile Pages
+            </h2>
+           
+            
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <img src="/alumni-site/img/undraw_education_f8ru.svg" alt="">
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item black">GREAT WAY TO KEEP IN TOUCH! </a>
+          </footer>
+        </div>
+        
+
+        
+      </div>
+
+          
+  
+  <script src="/alumni-site/Script/dash.js"></script>
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</body>
+</html>
